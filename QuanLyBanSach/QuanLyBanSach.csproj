@@ -1713,6 +1713,12 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Images\slider1.jpg" />
+    <Content Include="Images\slider2.jpg" />
+    <Content Include="Images\slider3.jpg" />
+    <Content Include="NivoSlider\jquery.nivo.slider.js" />
+    <Content Include="NivoSlider\jquery.nivo.slider.pack.js" />
+    <Content Include="NivoSlider\nivo-slider.css" />
     <Content Include="Scripts\ai.0.22.9-build00167.js" />
     <Content Include="Scripts\ai.0.22.9-build00167.min.js" />
     <Content Include="Scripts\bootstrap.js" />

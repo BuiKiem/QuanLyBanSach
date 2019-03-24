@@ -4,19 +4,21 @@
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>@ViewBag.Title</title>
+
     @* CSS của template có sẵn *@
     <link href="~/Content/NguoiDungCssLayout/fonts.css" rel="stylesheet" />
     <link href="~/Content/NguoiDungCssLayout/screen.css" rel="stylesheet" />
-
     @* Chèn CSS của FontAwesome *@
     <link href="~/Content/fontawesome/css/all.min.css" rel="stylesheet" />
+    @* CSS của Nivo Slider*@
+    <link href="~/NivoSlider/nivo-slider.css" rel="stylesheet" />
     @* CSS tự định nghĩa *@
     <link href="~/Content/NguoiDungCssLayout/NguoiDungCssLayout.css" rel="stylesheet" />
     
 </head>
 <body>
-    @RenderBody()
     <div id="ToanTrang">
+        @* MAINMENU *@
         <section class="blank">
             <div class="flash">
                 <div class="DienThoai">
@@ -56,82 +58,106 @@
             </div>
         </section>
 
+        @* LEFTMENU AND SLIDER *@
         <section>
-            <div class="activity">
-                <h1 class="item-header">Recent Activity</h1>
+            @* Menu hiển thị sách mới *@
+            <div id="divMenuLeft">
+                <div class="activity">
+                    <h1 class="item-header">SÁCH MỚI</h1>
 
-                <div class="activity-list-update">
-                    <img src="http://lorempixel.com/50/50/" alt="Image">
-                    <p><strong>Dennis The Dude</strong> updated his <a href="#">user profile</a>.</p>
-                    <div class="clear"></div>
+                    <div class="activity-list-update">
+                        <img src="http://lorempixel.com/50/50/" alt="Image">
+                        <span>Sách công phần mềm</span>
+                        <div class="clear"></div>
+                    </div>
+
+                    <div class="activity-list-update">
+                        <img src="http://lorempixel.com/50/50/" alt="Image">
+                        <span>Lập trình C#</span>
+                        <div class="clear"></div>
+                    </div>
+
+                    <div class="activity-list-update">
+                        <img src="http://lorempixel.com/50/50/" alt="Image">
+                        <span>Lập trình Python</span>
+                        <div class="clear"></div>
+                    </div>
+
+                    <a href="#" class="item-footer green">
+                        Xem thêm
+                    </a>
                 </div>
+            </div>
+            @* Chèn NivoSlider *@
+            <div id="slider" class="nivoSlider">
+                <img src="~/Images/slider1.jpg" />
+                <img src="~/Images/slider2.jpg" />
+                <img src="~/Images/slider3.jpg" />
+            </div>
+            <div style="clear:both"></div>
+        </section>
 
-                <div class="activity-list-update">
-                    <img src="http://lorempixel.com/50/50/" alt="Image">
-                    <p><strong>Abe Kobo</strong> uploaded a new file <a href="#">new-design.png</a></p>
-                    <div class="clear"></div>
-                </div>
-
-                <div class="activity-list-update">
-                    <img src="http://lorempixel.com/50/50/" alt="Image">
-                    <p><strong>Abe Kobo</strong> uploaded a new file <a href="#">new-design.png</a></p>
-                    <div class="clear"></div>
-                </div>
-
-                <a href="#" class="item-footer green">
-                    See all activity
-                </a>
+        @* RENDER_BODY *@
+        <section>
+            <div id="NoiDung">
+                @RenderBody()
             </div>
         </section>
 
         <section>
             <div>
-                <a href="#" class="button">This is a button</a>
 
-                <a href="#" class="button button-submit">This is a save button</a>
-
-                <a href="#" class="button">Button with a counter <span class="notification">22</span></a>
-
-                <a href="#" class="button button-and-icon">
-                    <div><i class="icon-large icon-cog"></i></div>Button with an icon
-                </a>
+                <a href="#" class="button button-submit">Khoa học</a>
+                <a href="#" class="button button-submit">Công nghệ thông tin</a>
+                <a href="#" class="button button-submit">Tình yêu</a>
+                <a href="#" class="button button-submit">Xã hội</a>
+                <a href="#" class="button button-submit">Nhân văn</a>
+             
             </div>
-
-            <hr>
-
-            <div>
-                <a href="#" class="button button-submit">Submit</a>
-                <a href="#" class="button button-cancel">Cancel</a>
-                <a href="#" class="button button-delete">Delete</a>
-            </div>
-
-            <hr>
-
-            <div>
-                <a href="#" class="button button-small">Smaller button</a>
-            </div>
-
-            <hr>
-
         </section>
 
+        
+        @* PUBLISHER *@
         <section class="blank items">
-            <div class="item">
-                <img src="http://lorempixel.com/400/300/" alt="Image">
+            <div id="divLeft">
 
-                <div class="item-info">
-                    <h1>Item title</h1>
-                    <p>What the hell is this? Get out of town, I didn't know you did anything creative. Ah, let me read some.</p>
-                    <span class="price">£49.99</span>
-                    <a href="#" class="button button-buy">Get it now</a>
+
+                <div class="item">
+                    <img src="http://lorempixel.com/400/300/" alt="Image">
+
+                    <div class="item-info">
+                        <h1>Nhà xuất bản</h1>
+                        <div><a href="#">Kim Đồng</a></div>
+                        <div><a href="#">Kim Đồng</a></div>
+                        <div><a href="#">Kim Đồng</a></div>
+                        <div><a href="#">Kim Đồng</a></div>
+                    </div>
                 </div>
             </div>
 
-            <div>
-                <a href="#" class="button button-buy">Buy button (full width for columns)</a>
-            </div>
+            <div id="divRight">
+                @RenderSection("NoiDungBenPhai")
+            </div>           
         </section>
-
+        <div>
+            <a href="#" class="button button-buy">Chào mừng các bạn đã đến với khóa học trực tuyến MYCLASS.VN</a>
+        </div>
     </div>
+
+    @* JQuery *@
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    @* NivoSlider scripts *@
+    <script src="~/NivoSlider/jquery.nivo.slider.js"></script>
+    <script src="~/NivoSlider/jquery.nivo.slider.pack.js"></script>
+    @* Custom scripts *@
+    <script type="text/javascript">
+        $(window).load(function() {
+            $('#slider').nivoSlider({
+                controlNav: false,
+                prevText: '',
+                nextText: '',
+            });
+        });
+    </script>
 </body>
 </html>
