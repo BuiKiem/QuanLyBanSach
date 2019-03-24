@@ -33,6 +33,19 @@
             </div>
 
             <div class="flash success" id="divDanhMuc">
+                @* Hôp thoại tìm kiếm *@
+                <div id="txtTimKiem">
+                    @using (Html.BeginForm())
+                    {
+                        @Html.TextBox("txtTimKiem", "", htmlAttributes: new { @class="txtTimKiem", @placeholder="Nhập vào từ khóa cần tìm" })
+                        <div id="divHinhAnhTimKiem">
+                            <button type="submit">
+                                <i class="fas fa-search"></i>
+                            </button>
+                        </div>
+                    }
+                </div>
+
                 <ul class="navMenu">
                     <li><a href="#">Trang chủ</a></li>
                     <li><a href="#">Giới thiệu</a></li>
